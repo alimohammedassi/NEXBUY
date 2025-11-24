@@ -1,125 +1,54 @@
 name: nexbuy
 description: "NexBuy - Your trusted laptop marketplace."
-# The following line prevents the package from being accidentally published to
-# pub.dev using `flutter pub publish`. This is preferred for private packages.
-publish_to: 'none' # Remove this line if you wish to publish to pub.dev
+publish_to: "none"
 
-# The following defines the version and build number for your application.
-# A version number is three numbers separated by dots, like 1.2.43
-# followed by an optional build number separated by a +.
-# Both the version and the builder number may be overridden in flutter
-# build by specifying --build-name and --build-number, respectively.
-# In Android, build-name is used as versionName while build-number used as versionCode.
-# Read more about Android versioning at https://developer.android.com/studio/publish/versioning
-# In iOS, build-name is used as CFBundleShortVersionString while build-number is used as CFBundleVersion.
-# Read more about iOS versioning at
-# https://developer.apple.com/library/archive/documentation/General/Reference/InfoPlistKeyReference/Articles/CoreFoundationKeys.html
-# In Windows, build-name is used as the major, minor, and patch parts
-# of the product and file versions while build-number is used as the build suffix.
 version: 1.0.0+1
 
 environment:
   sdk: ^3.8.1
 
-# Dependencies specify other packages that your package needs in order to work.
-# To automatically upgrade your package dependencies to the latest versions
-# consider running `flutter pub upgrade --major-versions`. Alternatively,
-# dependencies can be manually updated by changing the version numbers below to
-# the latest version available on pub.dev. To see which dependencies have newer
-# versions available, run `flutter pub outdated`.
 dependencies:
   flutter:
     sdk: flutter
 
-  # The following adds the Cupertino Icons font to your application.
-  # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.8
-  
-  # HTTP requests for API calls
   http: ^1.1.0
-  
-  # State management
   provider: ^6.1.1
-  
-  # Icons
   font_awesome_flutter: ^10.6.0
-  
-  # Glass effect
   glassmorphism: ^3.0.0
-  
-  # Slide to act for interactive buttons
   slide_to_act: ^2.0.2
-  
-  # Gemini AI for chatbot
   google_generative_ai: ^0.4.0
-  
-  # Localization
   flutter_localizations:
     sdk: flutter
   shared_preferences: ^2.2.2
-  
-  # Google Maps
   google_maps_flutter: ^2.5.0
   geolocator: ^10.1.0
-  
+  google_fonts: ^6.3.2
+  path_provider: ^2.1.1
+  flutter_credit_card: ^4.1.0
+  curved_labeled_navigation_bar: ^2.0.6
+  crystal_navigation_bar: ^1.0.4
+  carousel_slider: ^5.0.0
+  supabase_flutter: ^2.10.3
+  flutter_svg: ^2.0.10+1
+  awesome_snackbar_content: ^0.1.8
+  flutter_timeline: ^0.3.0
+  image_picker: ^1.0.7
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
-
-  # The "flutter_lints" package below contains a set of recommended lints to
-  # encourage good coding practices. The lint set provided by the package is
-  # activated in the `analysis_options.yaml` file located at the root of your
-  # package. See that file for information about deactivating specific lint
-  # rules and activating additional ones.
   flutter_lints: ^5.0.0
-  
-  # Native splash screen
   flutter_native_splash: ^2.4.7
+  flutter_launcher_icons: ^0.13.1
 
-# For information on the generic Dart part of this file, see the
-# following page: https://dart.dev/tools/pub/pubspec
-
-# The following section is specific to Flutter packages.
 flutter:
-
-  # The following line ensures that the Material Icons font is
-  # included with your application, so that you can use the icons in
-  # the material Icons class.
   uses-material-design: true
 
-  # To add assets to your application, add an assets section, like this:
   assets:
     - images/
     - assets/translations/
 
-  # An image asset can refer to one or more resolution-specific "variants", see
-  # https://flutter.dev/to/resolution-aware-images
-
-  # For details regarding adding assets from package dependencies, see
-  # https://flutter.dev/to/asset-from-package
-
-  # To add custom fonts to your application, add a fonts section here,
-  # in this "flutter" section. Each entry in this list should have a
-  # "family" key with the font family name, and a "fonts" key with a
-  # list giving the asset and other descriptors for the font. For
-  # example:
-  # fonts:
-  #   - family: Schyler
-  #     fonts:
-  #       - asset: fonts/Schyler-Regular.ttf
-  #       - asset: fonts/Schyler-Italic.ttf
-  #         style: italic
-  #   - family: Trajan Pro
-  #     fonts:
-  #       - asset: fonts/TrajanPro.ttf
-  #       - asset: fonts/TrajanPro_Bold.ttf
-  #         weight: 700
-  #
-  # For details regarding fonts from package dependencies,
-  # see https://flutter.dev/to/font-from-package
-
-  # Custom fonts for different languages
   fonts:
     - family: Poppins
       fonts:
@@ -128,168 +57,44 @@ flutter:
       fonts:
         - asset: fonts/Cairo-Regular.ttf
 
-# Flutter Native Splash configuration
+# =========================================================
+#             SPLASH SCREEN (FULL SCREEN)
+# =========================================================
 flutter_native_splash:
-  # This package generates native code to customize Flutter's default white native splash screen
-  # with background color and splash image.
-  # Customize the parameters below, and run the following command in the terminal:
-  # dart run flutter_native_splash:create
-  # To restore the Flutter default white splash screen, run the following command in the terminal:
-  # dart run flutter_native_splash:remove
-
-  # color or background_image is the only required parameter.  Use color to set the background
-  # of your splash screen to a solid color.  Use background_image to set the background of your
-  # splash screen to a png image.  This is useful for gradients. The image will be stretch to the
-  # size of the app. Only one parameter can be used, color and background_image cannot both be set.
   color: "#ffffff"
-  #background_image: "assets/background.png"
+  image: "images/main_Splashsccreen.png" # <<< صورتك هنا
+  android: true
+  ios: true
 
-  # Optional parameters are listed below.  To enable a parameter, uncomment the line by removing
-  # the # character.
+  android_gravity: fill # يخلي الصورة Fullscreen
+  ios_content_mode: scaleAspectFill # يخليها Fullscreen في iOS
 
-  # The image parameter allows you to specify an image used in the splash screen.  It must be a
-  # png file and should be sized for 4x pixel density.
-  image: images/native_splash.png
-
-  # The branding property allows you to specify an image used as branding in the splash screen.
-  # It must be a png file. It is supported for Android, iOS and the Web.  For Android 12,
-  # see the Android 12 section below.
-  #branding: assets/dart.png
-
-  # To position the branding image at the bottom of the screen you can use bottom, bottomRight,
-  # and bottomLeft. The default values is bottom if not specified or specified something else.
-  #branding_mode: bottom
-
-  # The color_dark, background_image_dark, image_dark, branding_dark are parameters that set the background
-  # and image when the device is in dark mode. If they are not specified, the app will use the
-  # parameters from above. If the image_dark parameter is specified, color_dark or
-  # background_image_dark must be specified. color_dark and background_image_dark cannot both be
-  # set.
-  #color_dark: "#042a49"
-  #background_image_dark: "assets/dark-background.png"
-  #image_dark: assets/splash-invert.png
-  #branding_dark: assets/dart_dark.png
-
-  # Android 12 handles the splash screen differently than previous versions.  Please visit
-  # https://developer.android.com/guide/topics/ui/splash-screen
-  # Following are Android 12 specific parameter.
   android_12:
-    # The image parameter sets the splash screen icon image.  If this parameter is not specified,
-    # the app's launcher icon will be used instead.
-    # Please note that the splash screen icon must be a png file and should be sized for 4x pixel
-    # density.
-    image: images/native_splash.png
-
-    # Splash screen background color.
+    image: "images/main_Splashsccreen.png"
     color: "#ffffff"
 
-    # The branding property allows you to specify an image used as branding in the splash screen.
-    #branding: assets/dart.png
-
-    # The image_dark, color_dark and branding_dark set values that apply when the device is in dark
-    # mode. If they are not specified, the app will use the parameters from above.
-    #image_dark: assets/splash-invert.png
-    #color_dark: "#042a49"
-    #branding_dark: assets/dart_dark.png
-
-  # The android, ios and web parameters can be used to disable generating a splash screen on a given
-  # platform.
-  #android: false
-  #ios: false
-  #web: false
-
-  # Platform specific images can be specified with the following parameters, which will override
-  # the respective parameter.  You may specify all, selected, or none of these parameters:
-  #color_android: "#42a5f5"
-  #color_dark_android: "#042a49"
-  #color_ios: "#42a5f5"
-  #color_dark_ios: "#042a49"
-  #color_web: "#42a5f5"
-  #color_dark_web: "#042a49"
-  #image_android: assets/splash-android.png
-  #image_dark_android: assets/splash-invert-android.png
-  #image_ios: assets/splash-ios.png
-  #image_dark_ios: assets/splash-invert-ios.png
-  #image_web: assets/splash-web.png
-  #image_dark_web: assets/splash-invert-web.png
-  #background_image_android: assets/background-android.png
-  #background_image_dark_android: assets/dark-background-android.png
-  #background_image_ios: assets/background-ios.png
-  #background_image_dark_ios: assets/dark-background-ios.png
-  #background_image_web: assets/background-web.png
-  #background_image_dark_web: assets/dark-background-web.png
-  #branding_android: assets/brand-android.png
-  #branding_dark_android: assets/brand-dark-android.png
-  #branding_ios: assets/brand-ios.png
-  #branding_dark_ios: assets/brand-dark-ios.png
-
-  # The position of the splash image can be set with android_gravity, ios_content_mode, and
-  # web_image_mode parameters.  All default to center.
-  #
-  # android_gravity can be one of the following Android Gravity values:
-  #   android_gravity: bottom
-  #   android_gravity: center
-  #   android_gravity: center_horizontal
-  #   android_gravity: center_vertical
-  #   android_gravity: clip_horizontal
-  #   android_gravity: clip_vertical
-  #   android_gravity: end
-  #   android_gravity: fill
-  #   android_gravity: fill_horizontal
-  #   android_gravity: fill_vertical
-  #   android_gravity: left
-  #   android_gravity: right
-  #   android_gravity: start
-  #   android_gravity: top
-  android_gravity: center
-
-  # ios_content_mode can be one of the following iOS UIView.ContentMode values:
-  #   ios_content_mode: scaleToFill
-  #   ios_content_mode: scaleAspectFit
-  #   ios_content_mode: scaleAspectFill
-  #   ios_content_mode: center
-  #   ios_content_mode: top
-  #   ios_content_mode: bottom
-  #   ios_content_mode: left
-  #   ios_content_mode: right
-  #   ios_content_mode: topLeft
-  #   ios_content_mode: topRight
-  #   ios_content_mode: bottomLeft
-  #   ios_content_mode: bottomRight
-  #   ios_content_mode: redraw
-  #   ios_content_mode: repeat
-  #   ios_content_mode: tile
-  ios_content_mode: center
-
-  # web_image_mode can be one of the following modes:
-  #   web_image_mode: center
-  #   web_image_mode: scaleToFill
-  #   web_image_mode: scaleAspectFit
-  #   web_image_mode: scaleAspectFill
-  #   web_image_mode: repeat
-  #   web_image_mode: noRepeat
-  web_image_mode: center
-
-  # The screen orientation can be set in Android with the android_screen_orientation parameter.
-  # Allowed values are:
-  #   android_screen_orientation: landscape
-  #   android_screen_orientation: portrait
-  #   android_screen_orientation: sensorLandscape
-  #   android_screen_orientation: sensorPortrait
-  #   android_screen_orientation: sensor
-  #android_screen_orientation: portrait
-
-  # To hide the notification bar, use the fullscreen parameter.  Has no effect in web since web
-  # has no notification bar.  Defaults to false.
-  # NOTE: Unlike Android, iOS will not automatically show the notification bar when the app loads.
-  #       To show the notification bar, add the following code to your Flutter app:
-  #       WidgetsFlutterBinding.ensureInitialized();
-  #       SystemChrome.setEnabledSystemUIMode(SystemUiMode.manual, overlays: [SystemUiOverlay.bottom]);
-  #fullscreen: true
-
-  # If you have changed the name(s) of your info.plist file(s), you can specify the filename(s)
-  # with the info_plist_files parameter.  Remove only the # characters in the three lines below,
-  # do not remove the # characters in the commented out lines.
-  #info_plist_files:
-  #  - 'ios/Runner/Info-Debug.plist'
-  #  - 'ios/Runner/Info-Release.plist'
+# =========================================================
+#             APP ICON CONFIGURATION
+# =========================================================
+flutter_launcher_icons:
+  android: true
+  ios: true
+  image_path: "images/nexbuy logo 2.png"
+  min_sdk_android: 21 # android min sdk min:16, default 21
+  # Android adaptive icon settings - make image fill the icon
+  adaptive_icon_background: "#000000" # Background color (black to match logo)
+  adaptive_icon_foreground: "images/nexbuy logo 2.png" # Foreground image fills the icon
+  # Remove padding/margins to make image fill completely
+  remove_alpha_ios: true
+  web:
+    generate: true
+    image_path: "images/nexbuy logo 2.png"
+    background_color: "#000000"
+    theme_color: "#000000"
+  windows:
+    generate: true
+    image_path: "images/nexbuy logo 2.png"
+    icon_size: 256 # Larger size for better quality
+  macos:
+    generate: true
+    image_path: "images/nexbuy logo 2.png"
